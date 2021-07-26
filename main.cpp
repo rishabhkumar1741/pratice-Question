@@ -8,7 +8,7 @@ int main()
     freopen("output.txt","w",stdout);
     #endif
     
-    pattern::ris();
+    pattern::floydsTiangle();
 
     
     return 0 ;
