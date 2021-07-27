@@ -97,6 +97,8 @@ namespace operation
     }
 
 }
+
+
 namespace pattern
 {
     void hollow_rectangle()
@@ -228,7 +230,66 @@ namespace pattern
         }
     
     }
-    
+    void invertedPattern(int x)
+    {
+        for(int i=x ;i>=1;i--)
+        {
+            for(int j=1;j<=i;j++)
+            {
+                cout<<j<<" ";
+            }
+            cout<<endl;
+        }
+    }
+    void zeroOnePattern(int x)
+    {
+        bool boolValue = true;
+       
+        for(int i=1;i<=x;i++)
+        {
+            for(int j=1;j<=i;j++)
+            {
+                cout<< boolValue<<" ";
+                boolValue = !boolValue;
+            }
+            cout<<endl;
+
+        }
+        
+    }
+    void rhombusPattern(int x)
+    {
+        for(int i=x;i>=1;i--)
+        {
+            for(int j=1;j<=2*x-1;j++)
+            {
+                if(j<i || j-i>=5)
+                {
+                    cout<<" ";
+                }
+                else{
+                    cout<<"*"<<" ";
+                }
+            }
+            cout<<endl;
+        }
+    }
+    void numberPattern(int x)
+    {
+        for(int i=1;i<=x;i++)
+        {
+            for(int j=1;j<=x-i;j++)
+            {
+                cout<<" ";
+            }
+            for(int j=1;j<=i;j++)
+            {
+                cout<<j<<" ";
+            }
+            cout<<endl;
+        }
+    }
+
 
 
 }

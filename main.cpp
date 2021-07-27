@@ -1,6 +1,9 @@
 #include <iostream>
 #include "praticeQuestion.h"
 using namespace std;
+
+
+
 int main()
 {
     #ifndef ONLINE_JUDGE
@@ -8,7 +11,10 @@ int main()
     freopen("output.txt","w",stdout);
     #endif
     
-    pattern::butterFly();
+    
+    
+    
+    
 
     
     return 0 ;
