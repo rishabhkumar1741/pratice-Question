@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 namespace Ris
 {
@@ -289,7 +290,74 @@ namespace pattern
             cout<<endl;
         }
     }
+    void palindromicPattern(int x)
+    {
+        for(int i=1;i<=x;i++)
+        {
+            for(int j=i;j<x;j++)
+            {
+                cout<<" "<<" "; 
+            }
+            for(int dec=i;dec>=1;dec--)
+            {
+                cout<< dec<<" ";
+            }
+            for(int inc=2;inc<=i;inc++)
+            {
+                cout<< inc<<" ";
+            }
+            cout<<endl;
+        }
+    }
+    void starPattern(int x)
+    {
+        for(int i=1;i<=x;i++)
+        {
+            for(int j=i;j<=x-1;j++)
+            {
+                cout<<" ";
+            }
+            for(int j=1;j<=2*i-1;j++)
+            {
+                cout<<"*";
+            }
+
+            cout<<endl; 
+        }
 
 
+        for(int i=x;i>=1;i--)
+        {
+            for(int j=x;j>i;j--)
+            {
+                cout<<" ";
+            }
+            for(int j=1;j<=2*i-1;j++)
+            {
+                cout<<"*";
+            }
+
+            cout<<endl; 
+        }
+    }
+    void zigZagPattern(int x)
+    {
+        try
+        {
+            if(x!=9)
+            {
+                throw "input number should be 9"; 
+            }
+
+            
+        }
+        catch(char const* errType)
+        {
+            cout<<errType;
+        }
+        
+        
+    }
+    
 
 }
