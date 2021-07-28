@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-namespace Ris
+namespace zeroLevel
 {
     int sums(int a, int b)
     {
@@ -45,42 +45,42 @@ namespace Ris
         return 0;
     }
     // switch statment
-
-}
-
-void calculater()
-{
-    int x;
-    int y;
-    cin >> x >> y;
-    char opertater;
-    cin >> opertater;
-    cout << "program is start and your operater is ";
-    cout << opertater;
-
-    switch (opertater)
+    void calculater()
     {
-    case '+':
-        cout << "addition is ";
-        cout << x + y;
-        break;
-    case '-':
-        cout << "subtration is ";
-        cout << x - y;
-        break;
-    case '*':
-        cout << "multi is ";
-        cout << x * y;
-        break;
-    case '/':
-        cout << "divider is ";
-        cout << x / y;
-        break;
+        int x;
+        int y;
+        cin >> x >> y;
+        char opertater;
+        cin >> opertater;
+        cout << "program is start and your operater is ";
+        cout << opertater;
 
-    default:
-        break;
+        switch (opertater)
+        {
+        case '+':
+            cout << "addition is ";
+            cout << x + y;
+            break;
+        case '-':
+            cout << "subtration is ";
+            cout << x - y;
+            break;
+        case '*':
+            cout << "multi is ";
+            cout << x * y;
+            break;
+        case '/':
+            cout << "divider is ";
+            cout << x / y;
+            break;
+
+        default:
+            break;
+        }
     }
+
 }
+
 namespace operation
 {
     // operation
@@ -98,7 +98,6 @@ namespace operation
     }
 
 }
-
 
 namespace pattern
 {
@@ -126,238 +125,287 @@ namespace pattern
     }
     void inverted_half_pyramid()
     {
-        short int x ;
-        cin>>x;
-        for(int i =x ;i>0;i--)
+        short int x;
+        cin >> x;
+        for (int i = x; i > 0; i--)
         {
-            for(int j=i ; j>0 ;j--)
+            for (int j = i; j > 0; j--)
             {
-                cout<<"*";
+                cout << "*";
             }
-            cout<<endl;
+            cout << endl;
         }
     }
     void halfPyramidAfter180Rotation()
     {
-        cout<<"program is start"<< endl;
-        short int x ;
-        cin>>x ;
-        
-        for(int i=x;i>=1;i--)
+        cout << "program is start" << endl;
+        short int x;
+        cin >> x;
+
+        for (int i = x; i >= 1; i--)
         {
-          
-            for(int j =1;j<=x;j++)
+
+            for (int j = 1; j <= x; j++)
             {
-                if(i==j || j>=i)
+                if (i == j || j >= i)
                 {
-                    cout<<"*";
+                    cout << "*";
                 }
-                else{
-                    cout<<" ";
+                else
+                {
+                    cout << " ";
                 }
             }
-            cout<<endl;
+            cout << endl;
         }
-
-        
     }
     void halfPyramidUsingNumber()
     {
-        short int x ;
-        cin >>x;
-        
-        for(int i=1;i<=5;i++)
-        {
-            for(int j=1;j<=i;j++)
-            {
-                cout<< i;
-            }
-            
-            cout<<endl;
-        }
+        short int x;
+        cin >> x;
 
-    }
-    void floydsTiangle()
-    {
-        short int  x ; 
-        cin>>x;
-        short int floydTriangle= 1;
-        
-        for(int i=1;i<=x;i++)
+        for (int i = 1; i <= 5; i++)
         {
             for (int j = 1; j <= i; j++)
             {
-                cout<<floydTriangle<<" ";
+                cout << i;
+            }
+
+            cout << endl;
+        }
+    }
+    void floydsTiangle()
+    {
+        short int x;
+        cin >> x;
+        short int floydTriangle = 1;
+
+        for (int i = 1; i <= x; i++)
+        {
+            for (int j = 1; j <= i; j++)
+            {
+                cout << floydTriangle << " ";
                 floydTriangle++;
             }
-            cout<<endl;
-            
+            cout << endl;
         }
-
-
     }
     void butterFly()
     {
         short int x;
-        cin>>x;
-        
-        for(int i=1;i<=x;i++)
+        cin >> x;
+
+        for (int i = 1; i <= x; i++)
         {
-            for(int j=1;j<=x*2;j++)
+            for (int j = 1; j <= x * 2; j++)
             {
-                if (j<=i||(x*2 -j <i))
+                if (j <= i || (x * 2 - j < i))
                 {
-                    cout<<"*";
+                    cout << "*";
                 }
-                else{
-                    cout<<" ";
+                else
+                {
+                    cout << " ";
                 }
             }
-            cout<<endl;
+            cout << endl;
         }
-        for(int i=x;i>=1;i--)
+        for (int i = x; i >= 1; i--)
         {
-            for(int j=1;j<=x*2;j++)
+            for (int j = 1; j <= x * 2; j++)
             {
-                if (j<=i||(x*2 -j <i))
+                if (j <= i || (x * 2 - j < i))
                 {
-                    cout<<"*";
+                    cout << "*";
                 }
-                else{
-                    cout<<" ";
+                else
+                {
+                    cout << " ";
                 }
             }
-            cout<<endl;
+            cout << endl;
         }
-    
     }
     void invertedPattern(int x)
     {
-        for(int i=x ;i>=1;i--)
+        for (int i = x; i >= 1; i--)
         {
-            for(int j=1;j<=i;j++)
+            for (int j = 1; j <= i; j++)
             {
-                cout<<j<<" ";
+                cout << j << " ";
             }
-            cout<<endl;
+            cout << endl;
         }
     }
     void zeroOnePattern(int x)
     {
         bool boolValue = true;
-       
-        for(int i=1;i<=x;i++)
+
+        for (int i = 1; i <= x; i++)
         {
-            for(int j=1;j<=i;j++)
+            for (int j = 1; j <= i; j++)
             {
-                cout<< boolValue<<" ";
+                cout << boolValue << " ";
                 boolValue = !boolValue;
             }
-            cout<<endl;
-
+            cout << endl;
         }
-        
     }
     void rhombusPattern(int x)
     {
-        for(int i=x;i>=1;i--)
+        for (int i = x; i >= 1; i--)
         {
-            for(int j=1;j<=2*x-1;j++)
+            for (int j = 1; j <= 2 * x - 1; j++)
             {
-                if(j<i || j-i>=5)
+                if (j < i || j - i >= 5)
                 {
-                    cout<<" ";
+                    cout << " ";
                 }
-                else{
-                    cout<<"*"<<" ";
+                else
+                {
+                    cout << "*"
+                         << " ";
                 }
             }
-            cout<<endl;
+            cout << endl;
         }
     }
     void numberPattern(int x)
     {
-        for(int i=1;i<=x;i++)
+        for (int i = 1; i <= x; i++)
         {
-            for(int j=1;j<=x-i;j++)
+            for (int j = 1; j <= x - i; j++)
             {
-                cout<<" ";
+                cout << " ";
             }
-            for(int j=1;j<=i;j++)
+            for (int j = 1; j <= i; j++)
             {
-                cout<<j<<" ";
+                cout << j << " ";
             }
-            cout<<endl;
+            cout << endl;
         }
     }
     void palindromicPattern(int x)
     {
-        for(int i=1;i<=x;i++)
+        for (int i = 1; i <= x; i++)
         {
-            for(int j=i;j<x;j++)
+            for (int j = i; j < x; j++)
             {
-                cout<<" "<<" "; 
+                cout << " "
+                     << " ";
             }
-            for(int dec=i;dec>=1;dec--)
+            for (int dec = i; dec >= 1; dec--)
             {
-                cout<< dec<<" ";
+                cout << dec << " ";
             }
-            for(int inc=2;inc<=i;inc++)
+            for (int inc = 2; inc <= i; inc++)
             {
-                cout<< inc<<" ";
+                cout << inc << " ";
             }
-            cout<<endl;
+            cout << endl;
         }
     }
     void starPattern(int x)
     {
-        for(int i=1;i<=x;i++)
+        for (int i = 1; i <= x; i++)
         {
-            for(int j=i;j<=x-1;j++)
+            for (int j = i; j <= x - 1; j++)
             {
-                cout<<" ";
+                cout << " ";
             }
-            for(int j=1;j<=2*i-1;j++)
+            for (int j = 1; j <= 2 * i - 1; j++)
             {
-                cout<<"*";
+                cout << "*";
             }
 
-            cout<<endl; 
+            cout << endl;
         }
 
-
-        for(int i=x;i>=1;i--)
+        for (int i = x; i >= 1; i--)
         {
-            for(int j=x;j>i;j--)
+            for (int j = x; j > i; j--)
             {
-                cout<<" ";
+                cout << " ";
             }
-            for(int j=1;j<=2*i-1;j++)
+            for (int j = 1; j <= 2 * i - 1; j++)
             {
-                cout<<"*";
+                cout << "*";
             }
 
-            cout<<endl; 
+            cout << endl;
         }
     }
     void zigZagPattern(int x)
     {
         try
         {
-            if(x!=9)
+            if (x != 9)
             {
-                throw "input number should be 9"; 
+                throw "input number should be 9";
             }
-
-            
         }
-        catch(char const* errType)
+        catch (char const *errType)
         {
-            cout<<errType;
+            cout << errType;
         }
-        
-        
     }
-    
+}
 
+namespace basicProgram
+{
+    void isPrime(int x)
+    {
+        try
+        {
+            bool flag = false;
+            for (int i = 2; i <= x / 2 + 1; i++)
+            {
+                if (x % i == 0)
+                {
+                    cout << "number is not prime";
+                    flag = true;
+                    break;
+                }
+            }
+            if (flag == false)
+            {
+                cout << "number is a prime number";
+            }
+        }
+        catch (const std::exception &e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+    }
+    void reverseOfaNumber(int x)
+    {
+        int reverse = 0;
+        while (x > 0)
+        {
+            int temp = x % 10;
+            reverse = reverse * 10 + temp;
+            x = x / 10;
+        }
+        cout << reverse;
+    }
+    void armstrongNumber(int x)
+    {
+        int number = x;
+        int armstrong = 0;
+        while (x > 0)
+        {
+            int temp = x % 10;
+            armstrong = armstrong + temp * temp * temp;
+            x = x / 10;
+        }
+
+        if (number == armstrong)
+        {
+            cout << true;
+        }
+        else
+        {
+            cout << false;
+        }
+    }
 }

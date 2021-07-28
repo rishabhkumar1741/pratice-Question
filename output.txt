@@ -1,1 +1,1 @@
-input number should be 9
+0

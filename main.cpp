@@ -1,6 +1,8 @@
 #include <iostream>
 #include "praticeQuestion.h"
+#include <cmath>
 using namespace std;
+
 
 
 
@@ -12,7 +14,9 @@ int main()
     #endif
     int x ;
     cin >> x;
-    pattern::zigZagPattern(x);
+    
+    
+    
     
     
     
