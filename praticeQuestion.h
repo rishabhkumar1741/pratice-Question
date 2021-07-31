@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <math.h>
 using namespace std;
 namespace zeroLevel
 {
@@ -22,7 +23,7 @@ namespace zeroLevel
         cout << x;
         return 0;
     }
-    //  learing about continue and break statment
+    //  learning about continue and break statment
     int count(int x)
     {
         for (int i = 0; i <= 10; i++)
@@ -101,6 +102,21 @@ namespace operation
 
 namespace pattern
 {
+    /* 
+    hollow_rectangle
+    inverted_half_pyramid
+    halfPyramidAfter180Rotation
+    halfPyramidUsingNumber
+    floydsTiangle
+    butterFly
+    invertedPattern
+    zeroOnePattern
+    rhombusPattern
+    numberPattern
+    palindromicPattern
+    starPattern
+    zigZagPattern
+    */
     void hollow_rectangle()
     {
         short int row;
@@ -353,6 +369,11 @@ namespace pattern
 
 namespace basicProgram
 {
+    /*
+    isPrime
+    reverseOfaNumber
+    armstrongNumber
+    */
     void isPrime(int x)
     {
         try
@@ -406,6 +427,159 @@ namespace basicProgram
         else
         {
             cout << false;
+        }
+    }
+}
+
+namespace functionProgram
+{
+    /* all function written with the help of a function  (funny) i know but  i am tring to show how the function work  */
+    /* 
+    primeNumber
+    fibenacciSequence
+    factorial
+    ncr
+    pascalTriangle
+    */
+
+    int fac(int x)
+    {
+        try
+        {
+            if (x < 0)
+            {
+                throw "Error number must be positive";
+            }
+            if (x == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                int factorial = 1;
+                for (int i = x; i >= 1; i--)
+                {
+                    factorial = factorial * i;
+                }
+                return factorial;
+            }
+        }
+        catch (const char *err)
+        {
+            cout << err;
+        }
+        catch (const std::exception &e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+        return -1;
+    }
+    int nCr(int n, int r)
+    {
+        int nfac = fac(n);
+        int NminusR = fac(n - r);
+        int rfac = fac(r);
+        return nfac / (NminusR * rfac);
+    }
+    void fib(int numberOfTerm)
+    {
+        int fnum = 0;
+        int snum = 1;
+        int nextTerm = 0;
+        for (int i = 1; i <= numberOfTerm; i++)
+        {
+            cout << fnum << endl;
+            nextTerm = fnum + snum;
+            fnum = snum;
+            snum = nextTerm;
+        }
+    }
+    int primeNumber(int num1, int num2)
+    {
+        bool prime = true;
+        try
+        {
+            if (num1 > num2)
+            {
+                throw " error num2 must be greater then num1";
+            }
+            if (num1 < 0 || num2 << 0)
+            {
+                throw " erroe number must be positive ";
+            }
+            for (int i = num1; i <= num2; i++)
+            {
+                prime = true;
+                if (i == 1)
+                {
+                    continue;
+                }
+
+                for (int j = 2; j < sqrt(i); j++)
+                {
+
+                    if (i % j == 0)
+                    {
+                        prime = false;
+                        break;
+                    }
+                }
+                if (prime == true)
+                {
+                    cout << i << endl;
+                }
+            }
+        }
+        catch (const char *err)
+        {
+            cout << err;
+        }
+        catch (const std::exception &e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+
+        return 0;
+    }
+    void fibenacciSequence(int x)
+    {
+        fib(x);
+    }
+    void factorial(int x)
+    {
+        cout << fac(x);
+    }
+    void ncr(int n, int r)
+    {
+        cout << nCr(n, r);
+    }
+    void pascalTriangle(int x)
+    {
+        try
+        {
+            if (x < 0)
+            {
+                throw "number must be positive";
+            }
+            else
+            {
+                for (int i = 0; i < x; i++)
+                {
+                    for (int j = 0; j <= i; j++)
+                    {
+                        cout << nCr(i, j) << " ";
+                    }
+                    cout << endl;
+                }
+            }
+        }
+        catch (const char *err)
+        {
+            cout << err;
+        }
+        catch (const std::exception &e)
+        {
+            std::cerr << e.what() << '\n';
         }
     }
 }
