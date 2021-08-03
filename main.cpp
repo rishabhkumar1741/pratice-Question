@@ -1,17 +1,25 @@
 #include <iostream>
 #include "praticeQuestion.h"
+#include <bits/stdc++.h>
 #include <cmath>
 using namespace std;
-
+ 
 int main()
 {
     #ifndef ONLINE_JUDGE
     freopen("input.txt","r",stdin);
     freopen("output.txt","w",stdout);
     #endif
-    int x;
+ 
+    string x;
+    
+    
+
     cin>>x;
-    functionProgram::pascalTriangle(x);
+
+  
+ 
+    conversion::hexademialToDecimal(x);
    
 
 

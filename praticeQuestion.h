@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string>
+#include <bits/stdc++.h>
 #include <math.h>
 using namespace std;
 namespace zeroLevel
@@ -79,9 +79,7 @@ namespace zeroLevel
             break;
         }
     }
-
 }
-
 namespace operation
 {
     // operation
@@ -97,9 +95,7 @@ namespace operation
             cerr << e.what() << '\n';
         }
     }
-
 }
-
 namespace pattern
 {
     /* 
@@ -366,7 +362,6 @@ namespace pattern
         }
     }
 }
-
 namespace basicProgram
 {
     /*
@@ -430,7 +425,6 @@ namespace basicProgram
         }
     }
 }
-
 namespace functionProgram
 {
     /* all function written with the help of a function  (funny) i know but  i am tring to show how the function work  */
@@ -440,8 +434,9 @@ namespace functionProgram
     factorial
     ncr
     pascalTriangle
+    sunOfNumber
+    pythagorianTriplet
     */
-
     int fac(int x)
     {
         try
@@ -581,5 +576,106 @@ namespace functionProgram
         {
             std::cerr << e.what() << '\n';
         }
+    }
+    void sunOfNumber(int n)
+    {
+        cout<<(n*(n+1))/2;
+    }
+    void pythagorianTriplet(int x,int y,int z)
+    {
+        int maxNum  = max(x,max(y,z));
+        if(maxNum==x)
+        {
+            if (x*x==(y*y+z*z))
+            {
+                cout<< true;
+            }
+            else
+            {
+                cout<<false;
+            }
+        }
+        else if (maxNum==y)
+        {
+            if (y*y==(x*x+z*z))
+            {
+                cout<< true;
+            }
+            else
+            {
+                cout<<false;
+            }
+        }
+        else
+        {
+            if (z*z==(x*x+y*y))
+            {
+                cout<< true;
+            }
+            else
+            {
+                cout<<false;
+            }
+
+        }
+        
+    }
+}
+namespace conversion
+{
+    /*
+    binaryToDecimal
+    octalToDecimal
+    hexademialToDecimal
+    */
+    void binaryToDecimal(int binarynumber)
+    {
+        int ans = 0;
+        int base=1;
+        while(binarynumber>0)
+        {
+            int power = binarynumber%10;
+            ans += base*power;
+            base *= 2;
+            binarynumber = binarynumber/10;
+        }
+        cout<<ans;
+
+    }
+    void octalToDecimal(int octalnumber)
+    {
+        int ans = 0 ; 
+        int base = 1;
+        while(octalnumber>0)
+        {
+            int remender = octalnumber%10;
+            ans +=base*remender;
+            base*=8;
+            octalnumber/=10;
+        }
+        cout<<ans;
+
+
+    }
+    void hexademialToDecimal(string hexanumber)
+    {
+        int ans =0;
+        int base =1;
+        int sizeOfHexaNumber=  hexanumber.size();
+        for(int i = sizeOfHexaNumber-1; i>=0;i--)
+        {
+            if(hexanumber[i]>'0'&& hexanumber[i]<'9')
+            {
+                ans+=base*(hexanumber[i]-'0');
+            }
+            else if(hexanumber[i]>='A'&& hexanumber[i]<='F')
+            {
+                ans +=base*(hexanumber[i]-'A' + 10);
+            }
+            base*=16;
+        }
+        cout<<ans;
+
+
     }
 }
