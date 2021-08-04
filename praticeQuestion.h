@@ -627,6 +627,7 @@ namespace conversion
     binaryToDecimal
     octalToDecimal
     hexademialToDecimal
+    decimalToBinary
     */
     void binaryToDecimal(int binarynumber)
     {
@@ -678,4 +679,19 @@ namespace conversion
 
 
     }
+    void decimalToBinary(int decimalnumber)
+    {
+        int ans=0;
+        int power=1;
+        while(decimalnumber>0)
+        {
+            int temp = decimalnumber%2;
+            ans = ans + power*temp;
+            power *=10;
+            decimalnumber /= 2;
+        }
+        cout<<ans;
+       
+        
+    }   
 }
