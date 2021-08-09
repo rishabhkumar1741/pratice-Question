@@ -694,4 +694,115 @@ namespace conversion
        
         
     }   
+    int decimalToOctal(int octalnumber)
+    {
+        int ans =0;
+        int power = 1;
+        while (octalnumber>0)
+        {
+            int remender = octalnumber %8;
+            ans += remender*power;
+            power *=10;
+            octalnumber /=8;
+        }
+        return ans;
+        
+    }
+    
 }
+namespace binaryoperatation
+{
+    
+  
+    int binaryAddition(int a ,int b)
+    {
+        int carry =0;
+        int ans = 0;
+        while (a>0 && b>0)
+        {
+            if(a%2==0&&b%2==0)
+            {
+                ans = ans*10 + carry;
+            }
+            else if ((a%2==1&&b%2==0)&&(a%2==0&&b%2==1))
+            {
+               if (carry==1)
+               {
+                   ans = ans*10 +0;
+                   carry = 1;
+               }
+               else
+               {
+                   ans = ans*10 +1;
+                   carry = 0;
+               }
+            }
+            else
+            {
+                ans = ans*10 +carry;
+                carry=1;
+            
+            }
+            a /=10;
+            b /=10;            
+        }
+        while (a>0)
+        {
+            if(carry == 1)
+            {
+                ans = ans*10 +0;
+                carry=1;
+            }
+            else{
+                ans = ans*10 ;
+            }
+        }
+        
+        
+
+        return ans;
+    }
+}
+namespace searching
+{
+    int linearsearch(int arr[],int size,int find)
+    {
+        for(int i=0;i<size;i++)
+        {
+            if(arr[i]==find)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    int binarySearch(int arr[],int n,int find)
+    {
+        int startPoint=0;
+        int endPoint = n-1;
+        while (endPoint>=startPoint)
+        {
+           
+            int midpoint  = (startPoint + endPoint)/2;
+           
+            if (arr[midpoint]==find)
+            {
+                return midpoint;
+            }
+            else if (arr[midpoint]>find)
+            {
+                endPoint = midpoint -1;
+            }
+            else
+            {
+                startPoint = midpoint +1;
+            }
+            
+        }
+        return -1;
+        
+    }
+}
+
+

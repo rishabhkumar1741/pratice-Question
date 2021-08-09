@@ -11,11 +11,20 @@ int main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
+    int n;
+    cin>>n;
+    
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    int find;
+    cin>>find;
+    
 
-    int x;
-    cin >> x;
 
-    conversion::decimalToBinary(x);
-
+    
+     
     return 0;
 }
